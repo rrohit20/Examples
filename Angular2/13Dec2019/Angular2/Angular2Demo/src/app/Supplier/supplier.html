@@ -1,0 +1,49 @@
+﻿<table>
+    <tr>
+        <td>First Name:</td>
+        <td><input type="text" [(ngModel)]="currentSupplier.firstName" /></td>
+    </tr>
+    <tr>
+        <td>Last Name:</td>
+        <td><input type="text" [(ngModel)]="currentSupplier.lastName" /></td>
+    </tr>
+    <tr>
+        <td>Gender:</td>
+        <td><input type="text" [(ngModel)]="currentSupplier.Gender" /></td>
+    </tr>
+    <tr>
+        <td>Age:</td>
+        <td><input type="text" [(ngModel)]="currentSupplier.Age" /></td>
+    </tr>
+</table>
+<input type="button" (click)="Add()" value="Add Supplier" />
+<input type="button" (click)="Update()" value="Update Supplier" />
+<input type="button" (click)="Clear()" value="Cancel" />
+<br />
+
+<grid-ui [grid-entityName]="'supplier'"
+    [grid-Data]="suppliers">
+</grid-ui>
+<table>
+    <thead>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Gender</th>
+            <th>Age</th>
+        </tr>
+    </thead>
+    <tbody>
+        <ng-container *ngFor="let sup of suppliers;">
+            <tr>
+                <td>{{sup.firstName}}</td>
+                <td>{{sup.lastName}}</td>
+                <td>{{sup.Gender}}</td>
+                <td>{{sup.Age}}</td>
+            </tr>
+        </ng-container>
+        <tr>
+            <td colspan="5">No Customers to display</td>
+        </tr>
+    </tbody>
+</table>

@@ -1,0 +1,10 @@
+﻿<div>
+    First Name: <input [(ngModel)]="currentSupplier.firstName" type="text" /><br />
+    Last Name: <input [(ngModel)]="currentSupplier.lastName" type="text" /><br />
+    Gender: <input [(ngModel)]="currentSupplier.gender" type="text" /><br />
+    Age: <input [(ngModel)]="currentSupplier.age" type="text" /><br />
+    <input type="button" (click)="Add()" value="Add Supplier" />
+    <input type="button" (click)="Update()" value="Update Supplier" />
+    <input type="button" (click)="Clear()" value="Cancel" />
+    <grid-ui></grid-ui>
+</div>
